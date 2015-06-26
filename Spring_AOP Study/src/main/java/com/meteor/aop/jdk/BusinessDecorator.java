@@ -22,11 +22,20 @@ public class BusinessDecorator implements IBusinessObject{
 	}
 
 	@Override
-	public String logic(String userId) {
+	public String logic1(String userId) {
 		
 		System.out.println( "Decorator Prev" );
-		String result = bizO.logic(userId); 
+		String result = bizO.logic1(userId); 
 		System.out.println( "Decorator After" );
+		
+		return result;
+	}
+
+	@Override
+	public String logic2(String userId) {
+		System.out.println( "Decorator Prev22" );
+		String result = bizO.logic2(userId); 
+		System.out.println( "Decorator After22" );
 		
 		return result;
 	}

@@ -1,13 +1,15 @@
 package com.meteor.aop.jdk;
 
+import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 /**
+ * InvocationHandler를 구현한
  * JDK 다이나믹 프록시를 위한 핸들러
- * @author Tmax
+ * @author unseok.kim
  *
  */
-public class InvocationHandler {
+public class JdkInvocationHandler implements InvocationHandler {
 
 	 private Object target = null;
 
@@ -29,5 +31,6 @@ public class InvocationHandler {
              throw e;
          }
      }
+     
 	
 }
