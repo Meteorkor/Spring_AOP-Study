@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
-		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
@@ -24,28 +24,26 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.meteor.aop" />
-	
-	
+	<!--Advisor-->
 	<context:annotation-config/>
 	  
 	  <beans:bean id="springAdviser" class="com.meteor.aop.spring.SpringAdviser" ></beans:bean>
 	  
 	 <aop:aspectj-autoproxy />
-	 
+	<!-- 1번째 방법
+	POJO ADVISER
+	XML
+	  -->
 	<aop:config>
 		<aop:aspect id="logSpring" ref="springAdviser">
 			<aop:pointcut expression="execution(* com.meteor.aop.jdk.*.*(..))" id="servicePointCut"/>
 			<aop:before pointcut-ref="servicePointCut" method="before"/>
 			<aop:after pointcut-ref="servicePointCut" method="after"/>
-			<!-- 
-			<aop:before pointcut-ref="servicePointCut" method="before"/>
-			 -->
-		<!-- 
-		<aop:before pointcut-ref="servicePointCut" method="before"/>
-		<aop:after pointcut-ref="servicePointCut" method="after"/>
-		 -->
 		</aop:aspect>
 	</aop:config>
+	 
+	
+	 
 	
 	
 </beans:beans>

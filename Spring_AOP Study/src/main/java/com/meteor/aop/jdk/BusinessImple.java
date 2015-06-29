@@ -1,9 +1,13 @@
 package com.meteor.aop.jdk;
+
+import org.springframework.stereotype.Component;
+
 /**
  * ±¸ÇöÃ¼
  * @author unseok.kim
  *
  */
+@Component
 public class BusinessImple implements IBusinessObject{
 
 	@Override
