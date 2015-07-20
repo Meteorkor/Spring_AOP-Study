@@ -8,9 +8,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.meteor.aop.jdk.IBusinessObject;
 /**
- * Advisor 생성
- * XML 설정
- * 
+ * POJO ADVISER(ADVISE)
+ * XML PointCut
  * @author unseok.kim
  *
  */
@@ -21,12 +20,13 @@ public class SpringJdkProxyTest1 {
 
 	@Autowired
 	IBusinessObject bizO;
-	
+
 	@Test
 	public void plainImpleResult(){
-		
-//		IBusinessObject bizO = new BusinessImple();
-		
+		/*
+		살리면 어드바이스가 호출 될까?
+		IBusinessObject bizO = new BusinessImple();
+		*/
 		bizO.logic1("aa");
 		
 	}

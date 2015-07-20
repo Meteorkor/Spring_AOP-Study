@@ -8,23 +8,23 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.meteor.aop.jdk.IBusinessObject;
 /**
- * SPRING ADVISER
- * XML PointCut
+ * ASPECT ±¸Çö Áß
  * 
  * @author unseok.kim
  *
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations="test2-context.xml")
-public class SpringJdkProxyTest2 {
+@ContextConfiguration(locations="test4-context.xml")
+public class SpringJdkProxyTest4 {
 
-	@Autowired
 	IBusinessObject bizO;
+	@Autowired
 	
 	@Test
 	public void plainImpleResult(){
-		
+	
+		//bizO = new BusinessImple();
 		bizO.logic1("aa");
 		
 	}

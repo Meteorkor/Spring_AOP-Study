@@ -31,8 +31,8 @@
 	  
 	 <aop:aspectj-autoproxy />
 	<!-- 1번째 방법
-	POJO ADVISER
-	XML
+	POJO ADVISER(ADVISE)
+	XML PointCut
 	  -->
 	<aop:config>
 		<aop:aspect id="logSpring" ref="springAdviser">

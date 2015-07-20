@@ -24,26 +24,6 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.meteor.aop" />
-	<!--Advisor-->
-	<context:annotation-config/>
-	  <!-- 
-	  <beans:bean id="springAdviser" class="com.meteor.aop.spring.SpringAdviser" ></beans:bean>
-	   -->
-	 <aop:aspectj-autoproxy />
-
-	 <beans:bean id="springMethodBeforeAdvice" class="com.meteor.aop.spring.SpringMethodBeforeAdvice" ></beans:bean>
-	 
-	 
-	 <!--
-	 2번째 방법
-	 SPRING ADVISER
-	 XML PointCut
-	   -->
-	<aop:config>
-		<aop:advisor advice-ref="springMethodBeforeAdvice" pointcut="bean(*usiness*)" />
-	</aop:config>
-	
-	
 	 
 	
 	
