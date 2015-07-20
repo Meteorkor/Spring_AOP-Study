@@ -15,7 +15,9 @@ import com.meteor.aop.cglib.Computer;
  *
  */
 public class CGlibProxyTest {
-	
+	/**
+	 * 클래스 생성 후 메소드 콜
+	 */
 //	@Test
 	public void computerTest(){
 		
@@ -24,10 +26,11 @@ public class CGlibProxyTest {
 		com.printSpec();
 		
 	}
-	
+	/**
+	 * 콜백 없이 지정
+	 */
 //	@Test
 	public void noCallcglibProxyTest(){
-		System.out.println( "cglib" );
 		Enhancer enhance = new Enhancer();
 		
 		enhance.setSuperclass( Computer.class );
@@ -37,16 +40,21 @@ public class CGlibProxyTest {
 		
 		com.printSpec();
 		
+		/*
+		얘는 무슨 클래스일까..
+		System.out.println( "com.getClass().getName() : " + com.getClass().getName() );
+		*/
 	}
-	@Test
+	/**
+	 * 콜백 지정하여 확장
+	 */
+//	@Test
 	public void cglibProxyTest(){
-		System.out.println( "cglib" );
 		Enhancer enhance = new Enhancer();
 		
 		enhance.setSuperclass( Computer.class );
-//		enhance.setCallback( NoOp.INSTANCE );
+		//콜백 지정
 		enhance.setCallback( new CglibInvocationHandler() );
-		
 		
 		Computer com = (Computer) enhance.create();
 		
