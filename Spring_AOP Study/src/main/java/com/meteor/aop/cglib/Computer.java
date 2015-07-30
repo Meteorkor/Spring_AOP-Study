@@ -1,5 +1,8 @@
 package com.meteor.aop.cglib;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Computer {
 
 	private String cpu = "1.2Ghz";

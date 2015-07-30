@@ -1,10 +1,13 @@
 package com.meteor.aop.jdk;
 
+import org.springframework.stereotype.Component;
+
 /**
  * AOP 를 위한 데코레이터
  * @author unseok.kim
  *
  */
+//@Component
 public class BusinessDecorator implements IBusinessObject{
 
 	public BusinessDecorator( IBusinessObject bo ){

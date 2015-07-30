@@ -9,11 +9,15 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class BusinessImple implements IBusinessObject{
-
+/*
+	@Autowired
+	public Computer com;
+*/	
 	@Override
 	public String logic1(String userId) {
 		
 		System.out.println( "BusinessImple" );
+//		com.printSpec();
 		
 		return "result";
 	}

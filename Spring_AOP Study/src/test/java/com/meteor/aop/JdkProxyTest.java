@@ -2,6 +2,8 @@ package com.meteor.aop;
 
 import java.lang.reflect.Proxy;
 
+import org.junit.Test;
+
 import com.meteor.aop.jdk.BusinessDecorator;
 import com.meteor.aop.jdk.BusinessImple;
 import com.meteor.aop.jdk.IBusinessObject;
@@ -27,7 +29,7 @@ public class JdkProxyTest {
 	/**
 	 * 데코레이터 패턴을 통한 기능 확장(오브젝트)
 	 */
-//	@Test
+	@Test
 	public void decoratorResult(){
 		
 		IBusinessObject bizO = new BusinessImple();

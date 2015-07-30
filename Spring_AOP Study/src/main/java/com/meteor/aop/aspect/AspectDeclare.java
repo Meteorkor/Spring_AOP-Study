@@ -1,5 +1,6 @@
 package com.meteor.aop.aspect;
 
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
@@ -33,13 +34,13 @@ public class AspectDeclare {
 	/*
 	 * 어드바이스 After 활용
 	 * 
-	 * 
+	 *	*/ 
 //	@After("pointCut(), pointCut()")
 	@After("execution(* com.meteor.aop.jdk.*.*(..))")
 	public void afterTest(){
 		System.out.println("After Run~!" );
 	}
-	*/
+
 	/*
 //	@Around("execution(* com.meteor.aop.jdk.*.*(..))")
 	@Around("pointCut(), pointCut()")

@@ -17,9 +17,10 @@ import com.meteor.aop.jdk.IBusinessObject;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="test4-context.xml")
 public class SpringJdkProxyTest4 {
-
-	IBusinessObject bizO;
+	
 	@Autowired
+	IBusinessObject bizO;
+	
 	
 	@Test
 	public void plainImpleResult(){
